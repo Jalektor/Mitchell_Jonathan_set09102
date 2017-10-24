@@ -1,0 +1,21 @@
+﻿<Window x:Class="messageFilterSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:messageFilterSystem"
+        mc:Ignorable="d"
+        Background="Gold"
+        Title="MainWindow" Height="420" Width="800">
+    <Grid>
+        <TextBlock x:Name="tBlockTitle" HorizontalAlignment="Left" Margin="115,10,0,0" Text="{Binding TBlockTitle}" VerticalAlignment="Top" FontSize="20"/>
+
+        <Button x:Name="btnSMS" Content="{Binding BtnSMSContent}" Command="{Binding BtnSMSCommand}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnEmail" Content="{Binding BtnEmailContent}" Command="{Binding BtnEmailCommand}" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnTweet" Content="{Binding BtnTweetContent}" Command="{Binding BtnTweetCommand}" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnExit" Content="{Binding BtnExitContent}" Command="{Binding BtnExitCommand}" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top" Width="90" Click="btnExit_Click"/>
+
+        <ContentControl Content="{Binding ContentControlBinding}" HorizontalAlignment="Left" Margin="120,37,0,0" VerticalAlignment="Top" Height="300" Width="650"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="messageFilterSystem.Views.AddEmail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:messageFilterSystem.Views"
+             mc:Ignorable="d" 
+             Background="Coral"
+             d:DesignHeight="300" d:DesignWidth="600">
+    <Grid>
+        <TextBlock x:Name="tBlockTitle" Text="{Binding TBlockTitle}" HorizontalAlignment="Left" Margin="120,10,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock x:Name="tBlockMHeader" HorizontalAlignment="Left" Margin="20,50,0,0" Text="{Binding TBlockMHeader}" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tBlockMID" HorizontalAlignment="Left" Margin="20,70,0,0" Text="{Binding TBlockMID}" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cBoxMID" HorizontalAlignment="Left" Text="{Binding CBoxMID}" Margin="160,70,0,0" VerticalAlignment="Top" Width="40" Height="19">
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="E"/>
+            <ComboBoxItem Content="T"/>
+        </ComboBox>
+        <TextBlock x:Name="tBlockMChars" HorizontalAlignment="Left" Margin="210,73,0,0" Text="{Binding TBlockMChars}" VerticalAlignment="Top"/>
+        <TextBox x:Name="tBoxMID" HorizontalAlignment="Left" Height="19" Margin="420,70,0,0" Text="{Binding TBoxMID}" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="tBlockSender" HorizontalAlignment="Left" Margin="20,100,0,0" Text="{Binding TBlockSender}" VerticalAlignment="Top"/>
+        <TextBox x:Name="tBoxSender" HorizontalAlignment="Left" Height="19" Margin="70,100,0,0" Text="{Binding TBoxSender}" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="tBlockBody" HorizontalAlignment="Left" Margin="20,150,0,0" Text="{Binding TBlockBody}" VerticalAlignment="Top"/>
+        <TextBox x:Name="tBoxBody" HorizontalAlignment="Left" Height="100" Margin="70,150,0,0" TextWrapping="Wrap" Text="{Binding TBoxBody}" VerticalAlignment="Top" Width="490"/>
+        <Button x:Name="btnInsertSMS" Content="{Binding BtnInsertSMSContent}" Command="{Binding BtnInsertSMSCommand}" HorizontalAlignment="Left" Margin="260,260,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock x:Name="tBlockSubject" HorizontalAlignment="Left" Margin="230,103,0,0" Text="{Binding TBlockSubject}" VerticalAlignment="Top"/>
+        <TextBox x:Name="tBoxSubject" HorizontalAlignment="Left" Height="19" Margin="280,100,0,0" Text="{Binding TBoxSubject}"  VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</UserControl>
