@@ -47,3 +47,9 @@ C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\message
 C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\messageFilterSystem.csproj.CoreCompileInputs.cache
 C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\messageFilterSystem.exe
 C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\messageFilterSystem.pdb
+C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\DisplayList.g.cs
+C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\DisplayList.baml
+C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\SelectList.g.cs
+C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\SelectList.baml
+C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\DisplayMessage.g.cs
+C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\DisplayMessage.baml

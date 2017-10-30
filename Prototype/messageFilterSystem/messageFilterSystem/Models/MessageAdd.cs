@@ -13,7 +13,6 @@ namespace messageFilterSystem.Models
         public string Sender { get; set; }     
         public string Body { get; set; }
         #endregion
-
         #region Constructor
         public MessageAdd()
         {

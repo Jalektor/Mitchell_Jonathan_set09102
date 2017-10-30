@@ -58,16 +58,20 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Database\LoadFromFile.cs" />
     <Compile Include="Database\SaveToFile.cs" />
     <Compile Include="Database\SaveToList.cs" />
     <Compile Include="Models\EmailAdd.cs" />
     <Compile Include="Models\ListAdd.cs" />
     <Compile Include="Models\MessageAdd.cs" />
+    <Compile Include="Models\TxtAbbreviations.cs" />
     <Compile Include="ViewModels\AddEmailViewModel.cs" />
     <Compile Include="ViewModels\AddSMSViewModel.cs" />
     <Compile Include="ViewModels\AddTweetViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\DisplayListViewModel.cs" />
     <Compile Include="ViewModels\FrontPageViewModel.cs" />
+    <Compile Include="ViewModels\SelectListViewModel.cs" />
     <Compile Include="Views\AddEmail.xaml.cs">
       <DependentUpon>AddEmail.xaml</DependentUpon>
     </Compile>
@@ -79,6 +83,15 @@
     </Compile>
     <Compile Include="Views\DefaultView.xaml.cs">
       <DependentUpon>DefaultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DisplayList.xaml.cs">
+      <DependentUpon>DisplayList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DisplayMessage.xaml.cs">
+      <DependentUpon>DisplayMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectList.xaml.cs">
+      <DependentUpon>SelectList.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -105,6 +118,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DefaultView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DisplayList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DisplayMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -14,7 +14,7 @@
         <Button x:Name="btnEmail" Content="{Binding BtnEmailContent}" Command="{Binding BtnEmailCommand}" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnTweet" Content="{Binding BtnTweetContent}" Command="{Binding BtnTweetCommand}" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnExit" Content="{Binding BtnExitContent}" Command="{Binding BtnExitCommand}" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top" Width="90" Click="btnExit_Click"/>
-        <Button x:Name="btnListDisplay" Content="{Binding BtnListDisplay}" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnListDisplay" Content="{Binding BtnListDisplay}" Command="{Binding BtnListDisplayCommand}" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" Width="75"/>
 
         <ContentControl Content="{Binding ContentControlBinding}" HorizontalAlignment="Left" Margin="120,37,0,0" VerticalAlignment="Top" Height="300" Width="650"/>
 

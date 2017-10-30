@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\App.xaml
-52012448768
+8-2048328479
 
-241507095708
+31-608905378
 14-1302126175
-MainWindow.xaml;Views\AddEmail.xaml;Views\AddSMS.xaml;Views\AddTweet.xaml;Views\DefaultView.xaml;
+MainWindow.xaml;Views\AddEmail.xaml;Views\AddSMS.xaml;Views\AddTweet.xaml;Views\DefaultView.xaml;Views\DisplayList.xaml;Views\DisplayMessage.xaml;Views\SelectList.xaml;
 
 False
 

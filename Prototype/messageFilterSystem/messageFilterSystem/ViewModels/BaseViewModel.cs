@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace messageFilterSystem.ViewModels
 {
-    class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

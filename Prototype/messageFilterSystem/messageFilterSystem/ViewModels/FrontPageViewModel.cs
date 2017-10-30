@@ -10,7 +10,7 @@ using messageFilterSystem.Views;
 
 namespace messageFilterSystem.ViewModels
 {
-    class FrontPageViewModel : BaseViewModel
+    public class FrontPageViewModel : BaseViewModel
     {
         #region TextBlockContent
         public string TBlockTitle { get; private set; }
@@ -29,6 +29,7 @@ namespace messageFilterSystem.ViewModels
         public ICommand BtnEmailCommand { get; private set; }
         public ICommand BtnTweetCommand { get; private set; }
         public ICommand BtnExitCommand { get; private set; }
+        public ICommand BtnListDisplayCommand { get; private set; }
         #endregion
 
         #region ContentControl
@@ -49,19 +50,18 @@ namespace messageFilterSystem.ViewModels
             BtnSMSCommand = new RelayCommand(BtnSMSButtonClick);
             BtnEmailCommand = new RelayCommand(BtnEmailButtonClick);
             BtnTweetCommand = new RelayCommand(BtnTweetButtonClick);
+            BtnListDisplayCommand = new RelayCommand(BtnListDisplayClick);
 
             ContentControlBinding = new DefaultView();
         }
         #endregion
 
         #region ButtonControls
-
         private void BtnSMSButtonClick()
         {
             ContentControlBinding = new AddSMS();
             OnChanged(nameof(ContentControlBinding));
         }
-
         private void BtnEmailButtonClick()
         {
             ContentControlBinding = new AddEmail();
@@ -71,6 +71,12 @@ namespace messageFilterSystem.ViewModels
         private void BtnTweetButtonClick()
         {
             ContentControlBinding = new AddTweet();
+            OnChanged(nameof(ContentControlBinding));
+        }
+
+        private void BtnListDisplayClick()
+        {
+            ContentControlBinding = new SelectList();
             OnChanged(nameof(ContentControlBinding));
         }
         #endregion
