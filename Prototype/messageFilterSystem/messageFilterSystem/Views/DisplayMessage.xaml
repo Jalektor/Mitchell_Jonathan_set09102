@@ -6,8 +6,19 @@
              xmlns:local="clr-namespace:messageFilterSystem.Views"
              mc:Ignorable="d" 
              Background="DarkSlateGray"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="250" d:DesignWidth="400">
     <Grid>
-            
+        <TextBlock x:Name="tBlockmID" HorizontalAlignment="Left" Margin="10,25,0,0" Text="{Binding TBlockMID}" VerticalAlignment="Top"/>
+        <TextBox x:Name="tBoxMID" HorizontalAlignment="Left" Margin="200,25,0,0" Text="Message ID" Height="20" IsReadOnly="True" Width="150" VerticalAlignment="Top"/>
+        
+        <TextBlock x:Name="tBlockSender" HorizontalAlignment="Left" Margin="10,75,0,0" Text="{Binding TBlockSender}" VerticalAlignment="Top"/>
+        <TextBox x:Name="tBoxSender" HorizontalAlignment="Left" Margin="200,75,0,0" Text="Sender" Height="20" IsReadOnly="True" Width="150" VerticalAlignment="Top"/>
+        
+        <TextBlock x:Name="tBlockBody" HorizontalAlignment="Left" Margin="10,125,0,0" Text="{Binding TBlockBody}" VerticalAlignment="Top"/>
+        <TextBox x:Name="tBoxBody" HorizontalAlignment="Left" Margin="200,125,0,0" Text="Message ID" Height="70" IsReadOnly="True" Width="190" VerticalAlignment="Top"/>
+        
+        <Button x:Name="btnNxtMsg" Content="{Binding BtnNxtMsgContent}" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnPreMsg" Content="{Binding BtnPreMsgContent}" HorizontalAlignment="Left" Margin="200,200,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </UserControl>

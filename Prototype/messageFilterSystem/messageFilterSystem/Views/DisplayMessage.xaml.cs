@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using messageFilterSystem.ViewModels;
 
 namespace messageFilterSystem.Views
 {
@@ -23,6 +24,7 @@ namespace messageFilterSystem.Views
         public DisplayMessage()
         {
             InitializeComponent();
+            this.DataContext = new DisplayMessageViewModel();
         }
     }
 }

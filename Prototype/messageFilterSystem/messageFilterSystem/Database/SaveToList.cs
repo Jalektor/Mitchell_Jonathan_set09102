@@ -19,7 +19,6 @@ namespace messageFilterSystem.Database
         public SaveToList()
         {
             FilePath = string.Empty;
-
             ErrorCode = string.Empty;
         }
 

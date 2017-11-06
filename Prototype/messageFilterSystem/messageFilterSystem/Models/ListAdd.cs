@@ -10,12 +10,13 @@ namespace messageFilterSystem.Models
     {
         #region Variable
         public string ListType { get; set; }
+        public string Count { get; set; }
         #endregion
-
         #region Constructor
         public ListAdd()
         {
             ListType = string.Empty;
+            Count = string.Empty;
         }
         #endregion
 

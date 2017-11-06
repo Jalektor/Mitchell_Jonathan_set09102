@@ -21,11 +21,10 @@ namespace messageFilterSystem.Views
     /// </summary>
     public partial class DisplayList : UserControl
     {
-        public DisplayList()
+        public DisplayList(string ListType)
         {
             InitializeComponent();
-
-            this.DataContext = new DisplayListViewModel();
+            this.DataContext = new DisplayListViewModel(ListType);
         }
     }
 }

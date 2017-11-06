@@ -58,7 +58,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="Database\LoadFromFile.cs" />
+    <Compile Include="Database\LoadListFromFile.cs" />
     <Compile Include="Database\SaveToFile.cs" />
     <Compile Include="Database\SaveToList.cs" />
     <Compile Include="Models\EmailAdd.cs" />
@@ -70,6 +70,7 @@
     <Compile Include="ViewModels\AddTweetViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DisplayListViewModel.cs" />
+    <Compile Include="ViewModels\DisplayMessageViewModel.cs" />
     <Compile Include="ViewModels\FrontPageViewModel.cs" />
     <Compile Include="ViewModels\SelectListViewModel.cs" />
     <Compile Include="Views\AddEmail.xaml.cs">

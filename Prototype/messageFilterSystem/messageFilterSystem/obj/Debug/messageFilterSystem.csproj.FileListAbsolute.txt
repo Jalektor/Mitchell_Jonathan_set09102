@@ -53,3 +53,10 @@ C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\S
 C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\SelectList.baml
 C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\DisplayMessage.g.cs
 C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\DisplayMessage.baml
+C:\Users\Jonathan\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\DisplayList.g.cs
+C:\Users\Jonathan\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\DisplayMessage.g.cs
+C:\Users\Jonathan\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\SelectList.g.cs
+C:\Users\Jonathan\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\DisplayList.baml
+C:\Users\Jonathan\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\DisplayMessage.baml
+C:\Users\Jonathan\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\Views\SelectList.baml
+C:\Users\Jonathan\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\messageFilterSystem.csproj.CoreCompileInputs.cache

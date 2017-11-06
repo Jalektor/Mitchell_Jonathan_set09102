@@ -11,20 +11,36 @@ namespace messageFilterSystem.ViewModels
 {
     class DisplayListViewModel : BaseViewModel
     {
-        public ObservableCollection<TxtAbbreviations> Abbreviations { get; set; }
-
-        public DisplayListViewModel()
+        #region Variables
+        public ObservableCollection<ListAdd> Lists { get; set; }
+        #endregion
+        #region Constructor
+        public DisplayListViewModel(string ListType)
         {
-            LoadFromFile load = new LoadFromFile();
-
-            if(!load.LoadTxtAbbreviations())
+            LoadListFromFile load = new LoadListFromFile();
+            if(ListType == "Trend")
             {
-                Abbreviations = new ObservableCollection<TxtAbbreviations>();
+                if (!load.LoadListType(ListType))
+                {
+                    Lists = new ObservableCollection<ListAdd>();
+                }
+                else
+                {
+                    Lists = new ObservableCollection<ListAdd>(load.Message);
+                }
             }
-            else
+            if(ListType == "Mention")
             {
-                Abbreviations = new ObservableCollection<TxtAbbreviations>(load.Message);
+                if (!load.LoadListType(ListType))
+                {
+                    Lists = new ObservableCollection<ListAdd>();
+                }
+                else
+                {
+                    Lists = new ObservableCollection<ListAdd>(load.Message);
+                }
             }
         }
+        #endregion
     }
 }

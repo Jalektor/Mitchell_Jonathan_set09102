@@ -12,6 +12,10 @@ namespace messageFilterSystem.ViewModels
 {
     public class SelectListViewModel : BaseViewModel
     {
+        #region Variable
+        public string ListType { get; set; }
+        public string MessageType { get; set; }
+        #endregion
         #region TextBlockContent
         public string TBlockTitle { get; private set; }
         public string TBlockListHeader { get; private set; }
@@ -89,17 +93,20 @@ namespace messageFilterSystem.ViewModels
 
         private void BtnTrendingListViewButtonClick()
         {
-            ContentControlBinding = new DisplayList();
+            ListType = "Trend";
+            ContentControlBinding = new DisplayList(ListType);
             OnChanged(nameof(ContentControlBinding));
         }
         private void BtnMentionListViewButtonClick()
         {
-            ContentControlBinding = new DisplayList();
+            ListType = "Mention";
+            ContentControlBinding = new DisplayList(ListType);
             OnChanged(nameof(ContentControlBinding));
         }
         private void BtnSIRListViewButtonClick()
         {
-            ContentControlBinding = new DisplayList();
+            ListType = "SIR";
+            ContentControlBinding = new DisplayList(ListType);
             OnChanged(nameof(ContentControlBinding));
         }
         #endregion

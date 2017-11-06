@@ -12,11 +12,13 @@
         <TextBlock x:Name="tBlockMHeader" HorizontalAlignment="Left" Margin="20,50,0,0" Text="{Binding TBlockMHeader}" VerticalAlignment="Top"/>
         <TextBlock x:Name="tBlockMID" HorizontalAlignment="Left" Margin="20,70,0,0" Text="{Binding TBlockMID}" VerticalAlignment="Top"/>
         <TextBlock x:Name="tBlockMChars" HorizontalAlignment="Left" Margin="120,70,0,0" Text="{Binding TBlockMChars}" VerticalAlignment="Top"/>
+        
         <TextBox x:Name="tBoxMID" HorizontalAlignment="Left" Height="19" Margin="335,70,0,0" Text="{Binding TBoxMID}" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="tBlockSender" HorizontalAlignment="Left" Margin="20,100,0,0" Text="{Binding TBlockSender}" VerticalAlignment="Top"/>
         <TextBox x:Name="tBoxSender" HorizontalAlignment="Left" Height="19" Margin="70,100,0,0" Text="{Binding TBoxSender}" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="tBlockBody" HorizontalAlignment="Left" Margin="20,150,0,0" Text="{Binding TBlockBody}" VerticalAlignment="Top"/>
         <TextBox x:Name="tBoxBody" HorizontalAlignment="Left" Height="100" Margin="70,150,0,0" TextWrapping="Wrap" Text="{Binding TBoxBody}" VerticalAlignment="Top" Width="490"/>
+        
         <Button x:Name="btnInsertSMS" Content="{Binding BtnInsertSMSContent}" Command="{Binding BtnInsertSMSCommand}" HorizontalAlignment="Left" Margin="260,263,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>

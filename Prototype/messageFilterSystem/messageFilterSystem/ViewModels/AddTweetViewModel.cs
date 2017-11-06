@@ -90,6 +90,7 @@ namespace messageFilterSystem.ViewModels
             ListAdd TweetMentions = new ListAdd();
             {
                 TweetMentions.ListType = "@" + TBoxSender;
+                TweetMentions.Count = "1";
             }
 
             ListType = "M";
@@ -120,6 +121,7 @@ namespace messageFilterSystem.ViewModels
                     ListAdd TweetHashtag = new ListAdd();
                     {
                         TweetHashtag.ListType = Hash;
+                        TweetHashtag.Count = "1";
                     }
 
                     ListType = "H";

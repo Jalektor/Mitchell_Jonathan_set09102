@@ -8,10 +8,10 @@
              Background="Khaki"
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel Height="300">
-            <DataGrid ItemsSource="{Binding Abbreviations}" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid ItemsSource="{Binding Lists}" IsReadOnly="True" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Abbreviation" Binding="{Binding Abbreviation}"/>
-                    <DataGridTextColumn Header="FullWord" Binding="{Binding FullWord}"/>
+                <DataGridTextColumn Header="Mention" Binding="{Binding ListType}"/>
+                <DataGridTextColumn Header="Occurences" Binding="{Binding Count}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
