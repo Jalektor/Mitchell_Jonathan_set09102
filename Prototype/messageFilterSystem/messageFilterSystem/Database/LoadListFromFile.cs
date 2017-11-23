@@ -11,16 +11,19 @@ namespace messageFilterSystem.Database
 {
     public class LoadListFromFile
     {
+        #region Variables/Properties
         private string FileLocation;
         public string ListType { get; set; }
 
         public List<ListAdd> Message { get; set; }     
         public string ErrorCode { get; set; }
-
+        #endregion
+        #region Constructor
         public LoadListFromFile()
         {
-            Message = new List<ListAdd>();
         }
+        #endregion    
+        #region LoadList
         public bool LoadListType(string listType)
         {
             bool Load = false;
@@ -37,13 +40,14 @@ namespace messageFilterSystem.Database
             }
             if(ListType == "SIR")
             {
-                FileLocation = "D:\\SIR.txt";
-                Load = LoadTxtAbbreviations();
+                FileLocation = "D:\\SIRList.txt";
+                Load = LoadSIRs();
             }
             return Load;
         }
+        #endregion
         #region LoadtxtAbv
-                public bool LoadTxtAbbreviations()
+        public bool LoadTxtAbbreviations()
                 {
                     try
                     {
@@ -71,13 +75,12 @@ namespace messageFilterSystem.Database
         {
             try
             {
-                var Jsontxt = File.ReadAllLines(FileLocation);
-                foreach(string line in Jsontxt)
+                using (StreamReader file = new StreamReader(FileLocation))
                 {
-                    ListAdd list = JsonConvert.DeserializeObject<ListAdd>(line.ToString());
-                    Message.Add(list);
+                    string Json = file.ReadToEnd();
+                    Message = JsonConvert.DeserializeObject<List<ListAdd>>(Json);
                 }
-                return true;
+                    return true;
             }
             catch (Exception ex)
             {
@@ -91,11 +94,10 @@ namespace messageFilterSystem.Database
         {
             try
             {
-                var Jsontxt = File.ReadAllLines(FileLocation);
-                foreach (string line in Jsontxt)
+                using (StreamReader file = new StreamReader(FileLocation))
                 {
-                    ListAdd list = JsonConvert.DeserializeObject<ListAdd>(line.ToString());
-                    Message.Add(list);
+                    string Json = file.ReadToEnd();
+                    Message = JsonConvert.DeserializeObject<List<ListAdd>>(Json);
                 }
                 return true;
             }
@@ -112,15 +114,10 @@ namespace messageFilterSystem.Database
         {
             try
             {
-                var data = File.ReadAllLines(FileLocation);
-                foreach (string value in data)
+                using (StreamReader file = new StreamReader(FileLocation))
                 {
-                    var line = value.Split(',');
-                    Message.Add(new ListAdd()
-                    {
-                        ListType = line[0],
-                        Count = line[1]
-                    });
+                    string Json = file.ReadToEnd();
+                    Message = JsonConvert.DeserializeObject<List<ListAdd>>(Json);
                 }
                 return true;
             }

@@ -17,9 +17,11 @@
         <TextBlock x:Name="tBlockSender" HorizontalAlignment="Left" Margin="20,100,0,0" Text="{Binding TBlockSender}" VerticalAlignment="Top"/>
         <TextBox x:Name="tBoxSender" HorizontalAlignment="Left" Height="19" Margin="70,100,0,0" Text="{Binding TBoxSender}" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="tBlockBody" HorizontalAlignment="Left" Margin="20,150,0,0" Text="{Binding TBlockBody}" VerticalAlignment="Top"/>
-        <TextBox x:Name="tBoxBody" HorizontalAlignment="Left" Height="100" Margin="70,150,0,0" TextWrapping="Wrap" Text="{Binding TBoxBody}" VerticalAlignment="Top" Width="490"/>
+        <TextBox x:Name="tBoxBody" HorizontalAlignment="Left" Height="100" Margin="70,150,0,0" TextWrapping="Wrap" Text="{Binding TBoxBody}" VerticalAlignment="Top" Width="490" MaxLength="120" TextChanged="tBoxBody_TextChanged"/>
         
         <Button x:Name="btnInsertSMS" Content="{Binding BtnInsertSMSContent}" Command="{Binding BtnInsertSMSCommand}" HorizontalAlignment="Left" Margin="260,263,0,0" VerticalAlignment="Top" Width="75"/>
+        
+        <TextBlock x:Name="tBlockCharCount" HorizontalAlignment="Left" Margin="420,255,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>

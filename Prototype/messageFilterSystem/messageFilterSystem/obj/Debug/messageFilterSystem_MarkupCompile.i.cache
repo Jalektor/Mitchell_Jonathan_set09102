@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\
+C:\Users\Jonathan\Desktop\messageFilterSystem\messageFilterSystem\obj\Debug\
 messageFilterSystem
 none
 false
 DEBUG;TRACE
-C:\Users\j_mit\Desktop\messageFilterSystem\messageFilterSystem\App.xaml
-8-2048328479
+C:\Users\Jonathan\Desktop\messageFilterSystem\messageFilterSystem\App.xaml
+101061561855
 
-32-127177470
-14-1302126175
-MainWindow.xaml;Views\AddEmail.xaml;Views\AddSMS.xaml;Views\AddTweet.xaml;Views\DefaultView.xaml;Views\DisplayList.xaml;Views\DisplayMessage.xaml;Views\SelectList.xaml;
+36-1764862555
+15-112436400
+MainWindow.xaml;Views\AddEmail.xaml;Views\AddSIR.xaml;Views\AddSMS.xaml;Views\AddTweet.xaml;Views\DefaultView.xaml;Views\DisplayEmail.xaml;Views\DisplayList.xaml;Views\DisplayMessage.xaml;Views\SelectList.xaml;
 
 True
 

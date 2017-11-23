@@ -23,7 +23,7 @@ namespace messageFilterSystem.Database
             ErrorCode = string.Empty;
         }
 
-        public bool WriteToCSV(MessageAdd AddMessage, string MessageType)
+        public bool WriteToCSV(List<MessageAdd> List, string MessageType)
         {
 
             switch(MessageType)
@@ -32,9 +32,8 @@ namespace messageFilterSystem.Database
                     FilePath = "D:\\SMS.txt";
                     try
                     {
-                        string JSON = JsonConvert.SerializeObject(AddMessage);
-                        JSON = JSON + Environment.NewLine;
-                        File.AppendAllText(FilePath, JSON.ToString());
+                        string JSON = JsonConvert.SerializeObject(List.ToArray(), Formatting.Indented);
+                        File.WriteAllText(FilePath, JSON.ToString());
                         complete = true;
                         
                     }
@@ -48,9 +47,8 @@ namespace messageFilterSystem.Database
                     FilePath = "D:\\Tweet.txt";
                     try
                     {
-                        string JSON = JsonConvert.SerializeObject(AddMessage);
-                        JSON = JSON + Environment.NewLine;
-                        File.AppendAllText(FilePath, JSON.ToString());
+                        string JSON = JsonConvert.SerializeObject(List.ToArray(), Formatting.Indented);
+                        File.WriteAllText(FilePath, JSON.ToString());
                         complete = true;
                     }
                     catch (Exception ex)
@@ -62,22 +60,42 @@ namespace messageFilterSystem.Database
             }
             return complete;
         }
-        public bool EmailToCSV(EmailAdd AddEmail, string MessageType)
+        public bool EmailToCSV(List<EmailAdd> List, string MessageType)
         {
-            FilePath = "D:\\StandardEmail.txt";
-            try
+            switch(MessageType)
             {
-                string JSON = JsonConvert.SerializeObject(AddEmail);
-                JSON = JSON + Environment.NewLine;
-                File.AppendAllText(FilePath, JSON.ToString());
-                complete = true;
+                case "E":
+                    FilePath = "D:\\StandardEmail.txt";
+                    try
+                    {
+                        string JSON = JsonConvert.SerializeObject(List.ToArray(), Formatting.Indented);
+                        File.WriteAllText(FilePath, JSON.ToString());
+                        complete = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        ErrorCode = ex.ToString();
+                        complete = false;
+                    }
+                    break;
+
+                case "S":
+                    FilePath = "D:\\SIREmail.txt";
+                    try
+                    {
+                        string JSON = JsonConvert.SerializeObject(List.ToArray(), Formatting.Indented);
+                        File.WriteAllText(FilePath, JSON.ToString());
+                        complete = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        ErrorCode = ex.ToString();
+                        complete = false;
+                    }
+                    break;
+                    
             }
-            catch (Exception ex)
-            {
-                ErrorCode = ex.ToString();
-                complete = false;
-            }
-            return complete;
+            return complete;           
         }
     }
 }

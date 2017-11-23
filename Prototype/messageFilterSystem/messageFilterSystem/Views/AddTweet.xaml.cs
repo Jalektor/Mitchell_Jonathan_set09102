@@ -21,11 +21,20 @@ namespace messageFilterSystem.Views
     /// </summary>
     public partial class AddTweet : UserControl
     {
+        private int count = 240;
         public AddTweet()
         {
             InitializeComponent();
 
             this.DataContext = new AddTweetViewModel();
+            tBlockCharCount.Text = "Total chars Remaining: " + count.ToString();
+        }
+
+        private void tBoxBody_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            count--;
+            tBlockCharCount.Text = "Total chars Remaining: " + count.ToString();
+
         }
     }
 }

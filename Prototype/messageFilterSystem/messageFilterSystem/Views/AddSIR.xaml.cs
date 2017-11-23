@@ -17,19 +17,18 @@ using messageFilterSystem.ViewModels;
 namespace messageFilterSystem.Views
 {
     /// <summary>
-    /// Interaction logic for AddEmail.xaml
+    /// Interaction logic for AddSIR.xaml
     /// </summary>
-    public partial class AddEmail : UserControl
+    public partial class AddSIR : UserControl
     {
         private int count = 1028;
-        public AddEmail()
+        public AddSIR()
         {
             InitializeComponent();
 
-            this.DataContext = new AddEmailViewModel();
+            this.DataContext = new AddSIRViewModel();
             tBlockCharCount.Text = "Total chars Remaining: " + count.ToString();
         }
-
         private void tBoxBody_TextChanged(object sender, TextChangedEventArgs e)
         {
             count--;

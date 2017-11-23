@@ -12,55 +12,37 @@ namespace messageFilterSystem.ViewModels
 {
     public class SelectListViewModel : BaseViewModel
     {
-        #region Variable
-        public string ListType { get; set; }
-        public string MessageType { get; set; }
-        #endregion
         #region TextBlockContent
-        public string TBlockTitle { get; private set; }
         public string TBlockListHeader { get; private set; }
         #endregion
         #region ButtonContent
-        public string BtnSMSViewContent { get; private set; }
-        public string BtnStandardEmailViewContent { get; private set; }
-        public string BtnIncidentReportViewContent { get; private set; }
-        public string BtnTweetViewContent { get; private set; }
-
         public string BtnTrendingListContent { get; private set; }
         public string BtnMentionListContent { get; private set; }
         public string BtnSIRListContent { get; private set; }
         #endregion
         #region ButtonCommand
-        public ICommand BtnSMSViewCommand { get; private set; }
-        public ICommand BtnEmailViewCommand { get; private set; }
-        public ICommand BtnIncidentReportViewCommand { get; private set; }
-        public ICommand BtnTweetViewCommand { get; private set; }
-
         public ICommand BtnTrendingListCommand { get; private set; }
         public ICommand BtnMentionListCommand { get; private set; }
         public ICommand BtnSIRListCommand { get; private set; }
-        #endregion
-        #region ContentControl
-        public UserControl ContentControlBinding { get; private set; }
-        #endregion
+        #endregion      
         #region Constructor
         public SelectListViewModel()
         {
             TBlockTitle = "Select List to View";
 
-            BtnSMSViewContent = "View SMS'";
-            BtnStandardEmailViewContent = "View Standard Emails";
-            BtnIncidentReportViewContent = "View Incident Reports";
-            BtnTweetViewContent = "View Tweets";
+            BtnSMSContent = "View SMS'";
+            BtnStandardEmailContent = "View Standard Emails";
+            BtnSIREmailContent = "View Incident Reports";
+            BtnTweetContent = "View Tweets";
 
             BtnTrendingListContent = "View Trending List";
             BtnMentionListContent = "View Mentions List";
             BtnSIRListContent = "View SIR List";
 
-            BtnSMSViewCommand = new RelayCommand(BtnSMSViewButtonClick);
-            BtnEmailViewCommand = new RelayCommand(BtnEMailViewButtonClick);
-            BtnIncidentReportViewCommand = new RelayCommand(BtnIncidentReportViewButtonClick);
-            BtnTweetViewCommand = new RelayCommand(BtnTweetViewButtonClick);
+            BtnSMSCommand = new RelayCommand(BtnSMSViewButtonClick);
+            BtnStandardEmailCommand = new RelayCommand(BtnEMailViewButtonClick);
+            BtnSIREmailCommand = new RelayCommand(BtnIncidentReportViewButtonClick);
+            BtnTweetCommand = new RelayCommand(BtnTweetViewButtonClick);
 
             BtnTrendingListCommand = new RelayCommand(BtnTrendingListViewButtonClick);
             BtnMentionListCommand = new RelayCommand(BtnMentionListViewButtonClick);
@@ -72,22 +54,26 @@ namespace messageFilterSystem.ViewModels
         #region ButtonControls
         private void BtnSMSViewButtonClick()
         {
-            ContentControlBinding = new DisplayMessage();
+            MessageType = "SMS";
+            ContentControlBinding = new DisplayMessage(MessageType);
             OnChanged(nameof(ContentControlBinding));
         }
         private void BtnEMailViewButtonClick()
         {
-            ContentControlBinding = new DisplayMessage();
+            MessageType = "Email";
+            ContentControlBinding = new DisplayEmail();
             OnChanged(nameof(ContentControlBinding));
         }
         private void BtnIncidentReportViewButtonClick()
         {
-            ContentControlBinding = new DisplayMessage();
+            MessageType = "SIR";
+            ContentControlBinding = new DisplayEmail();
             OnChanged(nameof(ContentControlBinding));
         }
         private void BtnTweetViewButtonClick()
         {
-            ContentControlBinding = new DisplayMessage();
+            MessageType = "Tweet";
+            ContentControlBinding = new DisplayMessage(MessageType);
             OnChanged(nameof(ContentControlBinding));
         }
 

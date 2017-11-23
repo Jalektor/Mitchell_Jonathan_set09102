@@ -12,62 +12,51 @@ namespace messageFilterSystem.ViewModels
 {
     public class FrontPageViewModel : BaseViewModel
     {
-        #region TextBlockContent
-        public string TBlockTitle { get; private set; }
-        #endregion
-
         #region ButtonContent
-        public string BtnSMSContent { get; private set; }
-        public string BtnEmailContent { get; private set; }
-        public string BtnTweetContent { get; private set; }
         public string BtnExitContent { get; private set; }
         public string BtnListDisplay { get; private set; }
         #endregion
-
         #region ButtonCommand
-        public ICommand BtnSMSCommand { get; private set; }
-        public ICommand BtnEmailCommand { get; private set; }
-        public ICommand BtnTweetCommand { get; private set; }
         public ICommand BtnExitCommand { get; private set; }
         public ICommand BtnListDisplayCommand { get; private set; }
-        #endregion
-
-        #region ContentControl
-        public UserControl ContentControlBinding { get; private set; }
-        #endregion
-
+        #endregion        
         #region Constructor
         public FrontPageViewModel()
         {
             TBlockTitle = "Euston Leisure Message Filtering Service";
 
             BtnSMSContent = "Add SMS";
-            BtnEmailContent = "Add Email";
+            BtnStandardEmailContent = "Add Email";
+            BtnSIREmailContent = "Add Incident Report";
             BtnTweetContent = "Add Tweet";
             BtnExitContent = "Exit Application";
             BtnListDisplay = "Display Lists";
 
             BtnSMSCommand = new RelayCommand(BtnSMSButtonClick);
-            BtnEmailCommand = new RelayCommand(BtnEmailButtonClick);
+            BtnStandardEmailCommand = new RelayCommand(BtnStandardEmailButtonClick);
+            BtnSIREmailCommand = new RelayCommand(BtnSIREmailButtonClick);
             BtnTweetCommand = new RelayCommand(BtnTweetButtonClick);
             BtnListDisplayCommand = new RelayCommand(BtnListDisplayClick);
 
             ContentControlBinding = new DefaultView();
         }
         #endregion
-
         #region ButtonControls
         private void BtnSMSButtonClick()
         {
             ContentControlBinding = new AddSMS();
             OnChanged(nameof(ContentControlBinding));
         }
-        private void BtnEmailButtonClick()
+        private void BtnStandardEmailButtonClick()
         {
             ContentControlBinding = new AddEmail();
             OnChanged(nameof(ContentControlBinding));
         }
-
+        private void BtnSIREmailButtonClick()
+        {
+            ContentControlBinding = new AddSIR();
+            OnChanged(nameof(ContentControlBinding));
+        }
         private void BtnTweetButtonClick()
         {
             ContentControlBinding = new AddTweet();

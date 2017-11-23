@@ -6,38 +6,54 @@ using System.Threading.Tasks;
 using messageFilterSystem.Models;
 using messageFilterSystem.Database;
 using System.Collections.ObjectModel;
+using System.Windows;
 
 namespace messageFilterSystem.ViewModels
 {
-    class DisplayListViewModel : BaseViewModel
+    class DisplayListViewModel
     {
         #region Variables
-        public ObservableCollection<ListAdd> Lists { get; set; }
+        public List<ListAdd> Lists { get; set; }
+        #endregion
+        #region ListHeaders
         #endregion
         #region Constructor
         public DisplayListViewModel(string ListType)
         {
+            
             LoadListFromFile load = new LoadListFromFile();
+
             if(ListType == "Trend")
             {
                 if (!load.LoadListType(ListType))
                 {
-                    Lists = new ObservableCollection<ListAdd>();
+                    Lists = new List<ListAdd>();
                 }
                 else
                 {
-                    Lists = new ObservableCollection<ListAdd>(load.Message);
+                    Lists = new List<ListAdd>(load.Message);
                 }
             }
             if(ListType == "Mention")
             {
                 if (!load.LoadListType(ListType))
                 {
-                    Lists = new ObservableCollection<ListAdd>();
+                    Lists = new List<ListAdd>();
                 }
                 else
                 {
-                    Lists = new ObservableCollection<ListAdd>(load.Message);
+                    Lists = new List<ListAdd>(load.Message);
+                }
+            }
+            if (ListType == "SIR")
+            {
+                if (!load.LoadListType(ListType))
+                {
+                    Lists = new List<ListAdd>();
+                }
+                else
+                {
+                    Lists = new List<ListAdd>(load.Message);
                 }
             }
         }

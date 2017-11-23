@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using messageFilterSystem.ViewModels;
+using messageFilterSystem.Models;
+using System.Collections.ObjectModel;
 
 namespace messageFilterSystem.Views
 {
@@ -21,10 +23,40 @@ namespace messageFilterSystem.Views
     /// </summary>
     public partial class DisplayMessage : UserControl
     {
-        public DisplayMessage()
+        int i = 0;
+        public List<MessageAdd> Messages { get; set; }
+
+        public DisplayMessage(string MessageType)
         {
             InitializeComponent();
-            this.DataContext = new DisplayMessageViewModel();
+            DisplayMessageViewModel Display = new DisplayMessageViewModel(MessageType);
+            this.DataContext = Display;
+
+            Messages = Display.Messages;
+        }
+
+        private void btnNxtMsg_Click(object sender, RoutedEventArgs e)
+        {
+            for (int x = i; x < Messages.Count(); x++)
+            {
+                tBoxMID.Text = Messages[x].MessageID;
+                tBoxSender.Text = Messages[x].Sender;
+                tBoxBody.Text = Messages[x].Body;
+                i++;
+                break;
+            }
+        }
+
+        private void btnPreMsg_Click(object sender, RoutedEventArgs e)
+        {
+            i--;
+            for (int x = i; x >= 0; x++)
+            {
+                tBoxMID.Text = Messages[x].MessageID;
+                tBoxSender.Text = Messages[x].Sender;
+                tBoxBody.Text = Messages[x].Body;
+                break;
+            }
         }
     }
 }

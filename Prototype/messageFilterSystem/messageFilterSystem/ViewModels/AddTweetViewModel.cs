@@ -11,32 +11,16 @@ using System.Windows.Input;
 
 namespace messageFilterSystem.ViewModels
 {
-    class AddTweetViewModel
+    class AddTweetViewModel : BaseViewModel
     {
         List<string> Hashtag = new List<string>();
-        #region TextBlockContent
-        public string TBlockTitle { get; private set; }
-        public string TBlockMHeader { get; private set; }
-        public string TBlockMID { get; private set; }
-        public string TBlockMChars { get; private set; }
-        public string TBlockSender { get; private set; }
-        public string TBlockBody { get; private set; }
-        #endregion
-
-        #region textBoxContent
-        public string TBoxMID { get; set; }
-        public string TBoxSender { get; set; }
-        public string TBoxBody { get; set; }
-        #endregion
-
         #region ButtonContent/Command
-        public string BtnInsertSMSContent { get; private set; }
-        public ICommand BtnInsertSMSCommand { get; private set; }
+        public string BtnInsertTweetContent { get; private set; }
+        public ICommand BtnInsertTweetCommand { get; private set; }
         #endregion
-
-        public string MessageType { get; set; }
-        public string ListType { get; set; }
-
+        List<MessageAdd>ListMessage = new List<MessageAdd>();
+        List<ListAdd> ListMention = new List<ListAdd>();
+        List<ListAdd> ListHashtag = new List<ListAdd>();
         #region Constructor
         public AddTweetViewModel()
         {
@@ -51,14 +35,13 @@ namespace messageFilterSystem.ViewModels
             TBoxSender = string.Empty;
             TBoxBody = string.Empty;
 
-            BtnInsertSMSContent = "Insert Tweet";
+            BtnInsertTweetContent = "Insert Tweet";
 
-            BtnInsertSMSCommand = new RelayCommand(InsertSMSClick);
+            BtnInsertTweetCommand = new RelayCommand(InsertSMSClick);
 
             MessageType = "T";
         }
         #endregion
-
         #region ButtonClickFunction
         private void InsertSMSClick()
         {
@@ -76,9 +59,11 @@ namespace messageFilterSystem.ViewModels
                 AddMessage.Body = TBoxBody;
             }
 
+            ListMessage.Add(AddMessage);
+
             SaveToFile File = new SaveToFile();
 
-            if (!File.WriteToCSV(AddMessage, MessageType))
+            if (!File.WriteToCSV(ListMessage, MessageType))
             {
                 MessageBox.Show("Error while saving\n" + File.ErrorCode);
             }
@@ -94,15 +79,17 @@ namespace messageFilterSystem.ViewModels
             }
 
             ListType = "M";
+            ListMention.Add(TweetMentions);
+
             SaveToList Mention = new SaveToList();
 
-            if(!Mention.WriteToCSV(TweetMentions, ListType))
+            if(!Mention.WriteToCSV(ListMention, ListType))
             {
-                MessageBox.Show("Error while saving\n" + File.ErrorCode);
+                MessageBox.Show("Error while saving\n" + Mention.ErrorCode);
             }
             else
             {
-                File = null;
+                Mention = null;
             }
 
             string[] body = AddMessage.Body.Split(' ');
@@ -125,15 +112,17 @@ namespace messageFilterSystem.ViewModels
                     }
 
                     ListType = "H";
+                    ListHashtag.Add(TweetHashtag);
+
                     SaveToList TweetHash = new SaveToList();
 
-                    if (!TweetHash.WriteToCSV(TweetHashtag, ListType))
+                    if (!TweetHash.WriteToCSV(ListHashtag, ListType))
                     {
-                        MessageBox.Show("Error while saving\n" + File.ErrorCode);
+                        MessageBox.Show("Error while saving\n" + TweetHash.ErrorCode);
                     }
                     else
                     {
-                        File = null;
+                        TweetHash = null;
                     }
                 }
             }

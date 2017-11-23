@@ -11,10 +11,10 @@
         <TextBlock x:Name="tBlockTitle" HorizontalAlignment="Left" Margin="20,10,0,0" Text="{Binding TBlockTitle}" VerticalAlignment="Top"/>
         <TextBlock x:Name="tBlockListHeader" HorizontalAlignment="Left" Margin="240,10,0,0" Text="{Binding TBlockListHeader}" VerticalAlignment="Top"/>
 
-        <Button x:Name="btnSMSView" Content="{Binding BtnSMSViewContent}" Command="{Binding BtnSMSViewCommand}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnStandardEmailView" Content="{Binding BtnStandardEmailViewContent}" Command="{Binding BtnEmailViewCommand}" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnIncidentReportView" Content="{Binding BtnIncidentReportViewContent}" Command="{Binding BtnIncidentReportViewCommand}" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnTweetView" Content="{Binding BtnTweetViewContent}" Command="{Binding BtnTweetViewCommand}" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnSMSView" Content="{Binding BtnSMSContent}" Command="{Binding BtnSMSCommand}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnStandardEmailView" Content="{Binding BtnStandardEmailContent}" Command="{Binding BtnStandardEmailCommand}" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnIncidentReportView" Content="{Binding BtnSIREmailContent}" Command="{Binding BtnSIREmailCommand}" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnTweetView" Content="{Binding BtnTweetContent}" Command="{Binding BtnTweetCommand}" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top"/>
 
         <Button x:Name="btnTrendingList" Content="{Binding BtnTrendingListContent}" Command="{Binding BtnTrendingListCommand}" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnMentionList" Content="{Binding BtnMentionListContent}" Command="{Binding BtnMentionListCommand}" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top"/>

@@ -22,7 +22,7 @@ namespace messageFilterSystem.Database
             ErrorCode = string.Empty;
         }
 
-        public bool WriteToCSV(ListAdd AddList, string MessageType)
+        public bool WriteToCSV(List<ListAdd> List, string MessageType)
         {
             switch(MessageType)
             {
@@ -30,9 +30,8 @@ namespace messageFilterSystem.Database
                     FilePath = "D:\\Mentions.txt";
                     try
                     {
-                        string JSON = JsonConvert.SerializeObject(AddList);
-                        JSON = JSON + Environment.NewLine;
-                        File.AppendAllText(FilePath, JSON.ToString());
+                        string JSON = JsonConvert.SerializeObject(List.ToArray(), Formatting.Indented);
+                        File.WriteAllText(FilePath, JSON.ToString());
                         complete = true;
                     }
                     catch(Exception ex)
@@ -45,9 +44,36 @@ namespace messageFilterSystem.Database
                     FilePath = "D:\\Hashtag.txt";
                     try
                     {
-                        string JSON = JsonConvert.SerializeObject(AddList);
-                        JSON = JSON + Environment.NewLine;
-                        File.AppendAllText(FilePath, JSON.ToString());
+                        string JSON = JsonConvert.SerializeObject(List.ToArray(), Formatting.Indented);
+                        File.WriteAllText(FilePath, JSON.ToString());
+                        complete = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        ErrorCode = ex.ToString();
+                        complete = false;
+                    }
+                    break;
+                case "S":
+                    FilePath = "D:\\SIRList.txt";
+                    try
+                    {
+                        string JSON = JsonConvert.SerializeObject(List.ToArray(), Formatting.Indented);
+                        File.WriteAllText(FilePath, JSON.ToString());
+                        complete = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        ErrorCode = ex.ToString();
+                        complete = false;
+                    }
+                    break;
+                case "Q":
+                    FilePath = "D:\\QuarantineList.txt";
+                    try
+                    {
+                        string JSON = JsonConvert.SerializeObject(List.ToArray(), Formatting.Indented);
+                        File.WriteAllText(FilePath, JSON.ToString());
                         complete = true;
                     }
                     catch (Exception ex)

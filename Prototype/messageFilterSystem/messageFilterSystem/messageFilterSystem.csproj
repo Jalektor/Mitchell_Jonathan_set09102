@@ -38,6 +38,7 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,6 +60,7 @@
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Database\LoadListFromFile.cs" />
+    <Compile Include="Database\LoadMessageFromFile.cs" />
     <Compile Include="Database\SaveToFile.cs" />
     <Compile Include="Database\SaveToList.cs" />
     <Compile Include="Models\EmailAdd.cs" />
@@ -66,6 +68,7 @@
     <Compile Include="Models\MessageAdd.cs" />
     <Compile Include="Models\TxtAbbreviations.cs" />
     <Compile Include="ViewModels\AddEmailViewModel.cs" />
+    <Compile Include="ViewModels\AddSIRViewModel.cs" />
     <Compile Include="ViewModels\AddSMSViewModel.cs" />
     <Compile Include="ViewModels\AddTweetViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
@@ -76,6 +79,9 @@
     <Compile Include="Views\AddEmail.xaml.cs">
       <DependentUpon>AddEmail.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddSIR.xaml.cs">
+      <DependentUpon>AddSIR.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddSMS.xaml.cs">
       <DependentUpon>AddSMS.xaml</DependentUpon>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <Compile Include="Views\DefaultView.xaml.cs">
       <DependentUpon>DefaultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DisplayEmail.xaml.cs">
+      <DependentUpon>DisplayEmail.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DisplayList.xaml.cs">
       <DependentUpon>DisplayList.xaml</DependentUpon>
@@ -110,6 +119,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AddSIR.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddSMS.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -119,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DefaultView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DisplayEmail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

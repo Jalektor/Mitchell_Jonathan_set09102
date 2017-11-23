@@ -11,33 +11,18 @@ using System.Windows.Input;
 
 namespace messageFilterSystem.ViewModels
 {
-    class AddSMSViewModel
+    class AddSMSViewModel : BaseViewModel
     {
-        #region TextBlockContent
-        public string TBlockTitle { get; private set; }
-        public string TBlockMHeader { get; private set; }
-        public string TBlockMID { get; private set; }        
-        public string TBlockMChars { get; private set; }
-        public string TBlockSender { get; private set; }
-        public string TBlockBody { get; private set; }
-        #endregion       
-
-        #region textBoxContent
-        public string TBoxMID { get; set;}
-        public string TBoxSender { get; set; }
-        public string TBoxBody { get; set; }
-        #endregion
-
         #region ButtonContent/Command
         public string BtnInsertSMSContent { get; private set; }
         public ICommand BtnInsertSMSCommand { get; private set; }
         #endregion
-
-        public string MessageType { get; set; }
+        List<MessageAdd> ListMessage = new List<MessageAdd>();
 
         #region Constructor
         public AddSMSViewModel()
         {
+
             TBlockTitle = "Add SMS message";
             TBlockMHeader = "Message Header";
             TBlockMID = "Message Type: S";
@@ -56,7 +41,6 @@ namespace messageFilterSystem.ViewModels
             MessageType = "S";
         }
         #endregion
-
         #region ButtonClickFunction
         private void InsertSMSClick()
         {
@@ -67,16 +51,17 @@ namespace messageFilterSystem.ViewModels
             }
 
             MessageAdd AddMessage = new MessageAdd();
-
             {
                 AddMessage.MessageID = "S" + TBoxMID;
                 AddMessage.Sender = TBoxSender;
                 AddMessage.Body = TBoxBody;
             }
 
+            ListMessage.Add(AddMessage);
+
             SaveToFile save = new SaveToFile();
 
-            if (!save.WriteToCSV(AddMessage, MessageType))
+            if (!save.WriteToCSV(ListMessage, MessageType))
             {
                 MessageBox.Show("Error while saving\n" + save.ErrorCode);
             }

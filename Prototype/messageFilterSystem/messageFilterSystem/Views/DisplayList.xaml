@@ -6,11 +6,11 @@
              xmlns:local="clr-namespace:messageFilterSystem.Views"
              mc:Ignorable="d" 
              Background="Khaki"
-             d:DesignHeight="300" d:DesignWidth="300">
-    <StackPanel Height="300">
+             d:DesignHeight="230" d:DesignWidth="400">
+    <StackPanel>
             <DataGrid ItemsSource="{Binding Lists}" IsReadOnly="True" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                <DataGridTextColumn Header="Mention" Binding="{Binding ListType}"/>
+                <DataGridTextColumn  Header="Trend/metntion" Binding="{Binding ListType}"/>
                 <DataGridTextColumn Header="Occurences" Binding="{Binding Count}"/>
                 </DataGrid.Columns>
             </DataGrid>

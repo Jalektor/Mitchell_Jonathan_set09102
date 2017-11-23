@@ -12,30 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using messageFilterSystem.ViewModels;
 
 namespace messageFilterSystem.Views
 {
     /// <summary>
-    /// Interaction logic for AddSMS.xaml
+    /// Interaction logic for DisplayEmail.xaml
     /// </summary>
-    public partial class AddSMS : UserControl
+    public partial class DisplayEmail : UserControl
     {
-        private int count = 120;
-
-        public AddSMS()
+        public DisplayEmail()
         {
             InitializeComponent();
-
-            this.DataContext = new AddSMSViewModel();
-            tBlockCharCount.Text = "Total chars Remaining: " + count.ToString();
-        }
-
-        private void tBoxBody_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            count--;
-            tBlockCharCount.Text = "Total chars Remaining: " + count.ToString();
-
         }
     }
 }

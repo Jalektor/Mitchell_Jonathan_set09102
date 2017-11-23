@@ -11,32 +11,13 @@ using System.Windows.Input;
 
 namespace messageFilterSystem.ViewModels
 {
-    class AddEmailViewModel
+    class AddEmailViewModel : BaseViewModel
     {
-        #region TextBlockContent
-        public string TBlockTitle { get; private set; }
-        public string TBlockMHeader { get; private set; }
-        public string TBlockMID { get; private set; }
-        public string TBlockMChars { get; private set; }
-        public string TBlockSender { get; private set; }
-        public string TBlockSubject { get; private set; }
-        public string TBlockBody { get; private set; }
-        #endregion     
-
-        #region textBoxContent
-        public string TBoxMID { get; set; }
-        public string TBoxSender { get; set; }
-        public string TBoxBody { get; set; }
-        public string TBoxSubject { get; set; }
-        #endregion
-
         #region ButtonContent/Command
-        public string BtnInsertSMSContent { get; private set; }
-        public ICommand BtnInsertSMSCommand { get; private set; }
+        public string BtnInsertEmailContent { get; private set; }
+        public ICommand BtnInsertEmailCommand { get; private set; }
         #endregion
-
-        public string MessageType { get; set; }
-
+        List<EmailAdd> ListEmail = new List<EmailAdd>();
         #region Constructor
         public AddEmailViewModel()
         {
@@ -53,14 +34,13 @@ namespace messageFilterSystem.ViewModels
             TBoxBody = string.Empty;
             TBoxSubject = string.Empty;
 
-            BtnInsertSMSContent = "Insert Email";
+            BtnInsertEmailContent = "Insert Email";
 
-            BtnInsertSMSCommand = new RelayCommand(InsertSMSClick);
+            BtnInsertEmailCommand = new RelayCommand(InsertSMSClick);
 
             MessageType = "E";
         }
         #endregion
-
         #region ButtonClickFunction
         private void InsertSMSClick()
         {
@@ -78,9 +58,11 @@ namespace messageFilterSystem.ViewModels
                 AddEmail.Body = TBoxBody;
             }
 
+            ListEmail.Add(AddEmail);
+
             SaveToFile save = new SaveToFile();
 
-            if (!save.EmailToCSV(AddEmail, MessageType))
+            if (!save.EmailToCSV(ListEmail, MessageType))
             {
                 MessageBox.Show("Error while saving\n" + save.ErrorCode);
             }
